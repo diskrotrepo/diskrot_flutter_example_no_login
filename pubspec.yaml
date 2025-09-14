@@ -1,0 +1,37 @@
+name: flutter_no_login
+description: "diskrot sample application showing how to use diskrot without login"
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  font_awesome_flutter:  ^10.8.0
+  drift: ^2.25.1
+  get_it: ^8.0.3
+  cupertino_icons: ^1.0.8
+  path: ^1.9.0
+  path_provider: ^2.1.5
+  shared_preferences: ^2.5.3
+  uuid: ^4.5.1
+  watch_it: ^1.6.1
+  http: ^1.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  drift_dev: ^2.25.2
+  flutter_launcher_icons: ^0.14.3
+  build_runner: ^2.4.14
+
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/diskrot_logo.png
