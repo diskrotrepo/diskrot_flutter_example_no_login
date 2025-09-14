@@ -14,7 +14,7 @@ The project is preconfigured to talk to the real diskrot authentication provider
 
 ## Running the Project
 
-This command should be run from the packages/sample directory. It will launch the project in debug mode in Chrome on port 8090
+This command should be run from the packages/sample directory. It will launch the project in debug mode in Chrome on port 8080
 
 ```bash
 flutter run -d chrome --web-port 8080
@@ -22,17 +22,12 @@ flutter run -d chrome --web-port 8080
 
 Press `r` to perform a hot reload while developing your application.
 
-
-## Working with the sample app
-
-In theory you should only need to stylize the `login/login_screen.dart` to your liking. You shouldn't need to touch the other files in the `login` directory.
-
 ## Bucket Setup
 
 Flutter is configured to follow the URL, so if you're using Google Cloud Storage you'll need to run the following command to ensure the bucket is routing requests to the index.html:
 
 ```bash
-gsutil web set -m index.html -e index.html gs://demo.diskrot.com
+gsutil web set -m index.html -e index.html gs://<yourSite>
 ```
 
 ## Configuration
@@ -66,17 +61,3 @@ The authentication logic happens in this section. There's no need to change this
   }
 ```
 
-## CI/CD
-
-There is an example Github workflow file with `.github/workflows`. This will allow your application to be deployed to GCP provided you have a GCP account. 
-
-**Configuration**
-
-In order for this to work for your project you will need to update a few values. If you rename the project from `sample` to anything else (you should), then you'll want to update all references to `sample` to match your new directory name. The project assumes you will be deploying to Google Cloud Storage (GCS), and so you will want to change `demo.diskrot.com` to match the name of your bucket.
-
-**Secrets**
-
-You will need to create the following repository secrets
-
-- GCP_SA_KEY:  A service account
-- GCP_PROJECT_ID: The name of your GCP project
